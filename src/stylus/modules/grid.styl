@@ -1,0 +1,26 @@
+.container
+  margin 0 auto
+  padding 0
+  position relative
+  width 100%
+
+.row
+  margin 0 auto
+  position relative
+
+  &:before,
+  &:after
+    content ""
+    display table
+    clear both
+    
+[class*='col-']
+    float left
+    min-height 1px 
+    width 100% 
+    background #ccc
+    margin-top 2px
+
+for i in 1..12
+  .col-{i}
+    width ((100/12) * i)%

@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         src: ['build']
       },
       stylesheets: {
-        src: ['build/**/*.css', '!build/<%= pkg.namespace %>.css','!build/<%= pkg.namespace %>.min.css']
+        src: ['build/**/*.css']
       },
     },
 
@@ -131,7 +131,7 @@ module.exports = function(grunt) {
   grunt.registerTask(
     'stylesheets', 
     'Compile stylesheets', 
-    ['stylus', 'postcss', 'cssmin', 'clean:stylesheets']
+    ['clean:stylesheets','stylus', 'postcss', 'cssmin']
   );
 
   /*

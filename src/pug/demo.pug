@@ -5,5 +5,12 @@ html(lang="en").no-js
     title #{name} Version: #{version}
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    link(rel="stylesheet", href="finfin.min.css", type="text/stylesheet")
+    link(rel="stylesheet", href="finfin.css", type="text/stylesheet")
   body
+  
+    div.container
+      - for (var x = 1; x <= 12; x++)
+        div.row
+          div(class="col-"+x)= x
+          if(12-x > 0)
+            div(class="col-"+(12-x))= 12-x
