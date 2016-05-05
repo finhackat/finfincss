@@ -29,16 +29,15 @@ module.exports = function(grunt) {
     },
 
     /*
-      Compile Stylus-files, prepend banne
+      Compile Stylus-files
     */
     stylus: {
       build: {
         options: {
-          banner: '/*! <%= pkg.name %> Version: <%= pkg.version %> */\n',
           compress: false
         },
         files : {
-          'build/<%= pkg.namespace %>.css': 'src/**/*.styl'
+          'build/<%= pkg.namespace %>.css': 'src/**/<%= pkg.namespace %>.styl'
         }
       }
     },
