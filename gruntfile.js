@@ -4,29 +4,36 @@ module.exports = function(grunt) {
   grunt.initConfig({
     
     pkg: grunt.file.readJSON('package.json'),
-
+    /*
+      Copy clean sources to /build
+    */
     copy: {
       build: {
         cwd: 'src',
-        src: [ '!**/*.styl', '!**/*.pug' ],
+        src: ['!**/*.styl', '!**/*.pug'],
         dest: 'build',
         expand: true
       },
     },
 
+    /*
+      Remove leftover sources from /build
+    */
     clean: {
       build: {
-        src: [ 'build' ]
+        src: ['build']
       },
       stylesheets: {
-        src: [ 'build/**/*.css', '!build/<%= pkg.namespace %>.css','!build/<%= pkg.namespace %>.min.css' ]
+        src: ['build/**/*.css', '!build/<%= pkg.namespace %>.css','!build/<%= pkg.namespace %>.min.css']
       },
     },
 
+    /*
+      Compile Stylus-files, prepend banne
+    */
     stylus: {
       build: {
         options: {
-          'include css' : true,
           banner: '/*! <%= pkg.name %> Version: <%= pkg.version %> */\n',
           compress: false
         },
@@ -36,6 +43,9 @@ module.exports = function(grunt) {
       }
     },
 
+    /*
+      Run PostCSS to handle autoprefixing etc.
+    */
     postcss: {
       build: {
         files: {
@@ -44,6 +54,9 @@ module.exports = function(grunt) {
       }
     },
 
+    /*
+      Compile a minified version of base CSS-file
+    */
     cssmin: {
       build: {
         files: {
@@ -52,6 +65,9 @@ module.exports = function(grunt) {
       }
     },
     
+    /*
+      Compile .pug to .html
+    */
     pug: {
       compile: {
         options: {
@@ -64,21 +80,27 @@ module.exports = function(grunt) {
       }
     },
 
+    /*
+      Watch for changes in stylesheets, pugs and copies
+    */
     watch: {
       stylesheets: {
         files: 'src/**/*.styl',
-        tasks: [ 'stylesheets' ]
+        tasks: ['stylesheets']
       },
       pug: {
         files: 'src/**/*.pug',
-        tasks: [ 'pug' ]
+        tasks: ['pug']
       },
       copy: {
-        files: [ 'src/**', '!src/**/*.styl', '!src/**/*.pug' ],
-        tasks: [ 'copy' ]
+        files: ['src/**', '!src/**/*.styl', '!src/**/*.pug'],
+        tasks: ['copy']
       }
     },
 
+    /*
+      Set up local server
+    */
     connect: {
       server: {
         options: {
@@ -91,7 +113,9 @@ module.exports = function(grunt) {
 
   });
 
-  // load the tasks
+  /*
+    Load tasks
+  */
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-stylus');
@@ -101,22 +125,31 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  // define the tasks
+  
+  /*
+    Register stylesheet task. Handles all Stylus/CSS tasks
+  */
   grunt.registerTask(
     'stylesheets', 
-    'Compiles the stylesheets.', 
-    [ 'stylus', 'postcss', 'cssmin', 'clean:stylesheets' ]
+    'Compile stylesheets', 
+    ['stylus', 'postcss', 'cssmin', 'clean:stylesheets']
   );
 
+  /*
+    Register build task 
+  */
   grunt.registerTask(
     'build', 
-    'Compiles all of the assets and copies the files to the build directory.', 
-    [ 'clean:build', 'copy', 'stylesheets', 'pug' ]
+    'Compile assets and copy files to /build', 
+    ['clean:build', 'copy', 'stylesheets', 'pug']
   );
 
+  /*
+    Register default task.
+  */
   grunt.registerTask(
     'default', 
-    'Watches the project for changes, automatically builds them and runs a server.', 
-    [ 'build', 'connect', 'watch' ]
+    'Build, serve and watch. Woff.', 
+    ['build', 'connect', 'watch']
   );
 };
