@@ -1,0 +1,18 @@
+make-grid()
+  $all-columns = ""
+  
+  for size, min-width in $breakpoints
+  
+    $all-columns = $all-columns + ($all-columns ? ',' : '') + "[class*='" + size + "-'] "
+  
+    if size != 'xxs'
+      @media screen and (min-width: min-width)
+        make-columns(size)
+    else
+      make-columns(size)
+  
+  {join(".",$all-columns)}
+    float left
+    min-height 1px  
+    background #ccc
+    margin-top 2px

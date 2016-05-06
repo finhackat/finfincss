@@ -1,0 +1,12 @@
+make-columns(size)
+  $column_list = ()
+  
+  for i in 1..$columns
+    $col-name = "." + size + "-" + i
+    $column_list = push($column_list,$col-name)
+    
+    column(size,i)
+
+column(size,i)
+  .{size}-{i}
+    width ((100/$columns) * i)%

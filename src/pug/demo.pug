@@ -9,8 +9,8 @@ html(lang="en").no-js
   body
   
     div.container
-      - for (var x = 1; x <= 12; x++)
+      - for (var x = 1; x <= 20; x++)
         div.row
-          div(class="col-"+x)= x
-          if(12-x > 0)
-            div(class="col-"+(12-x))= 12-x
+          div(class="xs-"+x)= x
+          if(20-x > 0)
+            div(class="xs-"+(20-x))= 20-x
