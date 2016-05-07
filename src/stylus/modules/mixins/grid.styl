@@ -5,7 +5,7 @@ make-grid()
   
     $all-columns = $all-columns + ($all-columns ? ',' : '') + "[class*='" + $size + "-'] "
   
-    if size != 'xxs'
+    if $size != 'xxs'
       @media screen and (min-width: $min-width)
         make-columns($size)
     else
@@ -13,3 +13,17 @@ make-grid()
   
   {join(".",$all-columns)}
     column()
+    
+make-row($width = 0)
+  if $width != 0
+    max-width $width
+
+  width 100%
+  margin 0 auto
+  position relative
+
+  &::before,
+  &::after
+    content ""
+    display table
+    clear both

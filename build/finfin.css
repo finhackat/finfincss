@@ -1,5 +1,6 @@
 .container {
-  max-width: 1140px;
+  max-width: $container-width;
+  width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -10,7 +11,7 @@
   clear: both;
 }
 .row {
-  max-width: 1140px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -524,7 +525,7 @@ textarea {
   font: inherit;
 }
 .blog {
-  max-width: 1140px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -535,7 +536,7 @@ textarea {
   clear: both;
 }
 .blog section {
-  max-width: 1140px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
 }

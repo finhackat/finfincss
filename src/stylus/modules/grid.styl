@@ -1,11 +1,7 @@
+.container 
+  make-row($container-width)
+  
 .row
-  margin 0 auto
-  position relative
-
-  &::before,
-  &::after
-    content ""
-    display table
-    clear both
+  make-row()
 
 make-grid()
