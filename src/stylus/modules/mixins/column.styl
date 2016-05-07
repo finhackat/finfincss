@@ -1,8 +1,8 @@
-
-
-column($width = false) 
+column($width = false,$push = 0) 
   if $width
     width ((100/$columns) * $width)%
+    if $push > 0
+      make-push($push)
   else
     float left
     min-height 1px  
@@ -21,10 +21,13 @@ make-columns($size)
     
 make-column($sizes)
   column()
+  
   for $size in $sizes
     if $size[0] != 'xxs'
       @media screen and (min-width: $breakpoints[$size[0]])
-        column($size[1])
+        column($size[1],$size[2])
     else
-      column($size[1])
+      column($size[1],$size[2])
       
+make-push($width)
+  margin-left ((100/$columns) * $width)%

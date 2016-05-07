@@ -7,17 +7,20 @@ html(lang="en").no-js
     meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel="stylesheet", href="finfin.css", type="text/css")
   body
-  
-    h1 Grid
     div.container
+  
+      h1 Grid
       - for (var x = 1; x <= 20; x++)
         div.row
-          div(class="xs-"+x)= x
+          div(class="xxs-"+x)= x
           if(20-x > 0)
-            div(class="xs-"+(20-x))= 20-x
-            
-    h1 Blog
-    div.blog
-      section
-        article Artikel! 
-        aside Sidebar!
+            div(class="xxs-"+(20-x))= 20-x
+              
+      h1 Blog
+      main.blog
+        section
+          article 
+          aside Sidebar!
+          
+        section.half
+          article PUSH!

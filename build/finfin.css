@@ -1,4 +1,16 @@
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+}
+.container::before,
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .row {
+  max-width: 1140px;
   margin: 0 auto;
   position: relative;
 }
@@ -8,67 +20,65 @@
   display: table;
   clear: both;
 }
-@media screen and (min-width: 320px) {
-  .xxs-1 {
-    width: 5%;
-  }
-  .xxs-2 {
-    width: 10%;
-  }
-  .xxs-3 {
-    width: 15%;
-  }
-  .xxs-4 {
-    width: 20%;
-  }
-  .xxs-5 {
-    width: 25%;
-  }
-  .xxs-6 {
-    width: 30%;
-  }
-  .xxs-7 {
-    width: 35%;
-  }
-  .xxs-8 {
-    width: 40%;
-  }
-  .xxs-9 {
-    width: 45%;
-  }
-  .xxs-10 {
-    width: 50%;
-  }
-  .xxs-11 {
-    width: 55%;
-  }
-  .xxs-12 {
-    width: 60%;
-  }
-  .xxs-13 {
-    width: 65%;
-  }
-  .xxs-14 {
-    width: 70%;
-  }
-  .xxs-15 {
-    width: 75%;
-  }
-  .xxs-16 {
-    width: 80%;
-  }
-  .xxs-17 {
-    width: 85%;
-  }
-  .xxs-18 {
-    width: 90%;
-  }
-  .xxs-19 {
-    width: 95%;
-  }
-  .xxs-20 {
-    width: 100%;
-  }
+.xxs-1 {
+  width: 5%;
+}
+.xxs-2 {
+  width: 10%;
+}
+.xxs-3 {
+  width: 15%;
+}
+.xxs-4 {
+  width: 20%;
+}
+.xxs-5 {
+  width: 25%;
+}
+.xxs-6 {
+  width: 30%;
+}
+.xxs-7 {
+  width: 35%;
+}
+.xxs-8 {
+  width: 40%;
+}
+.xxs-9 {
+  width: 45%;
+}
+.xxs-10 {
+  width: 50%;
+}
+.xxs-11 {
+  width: 55%;
+}
+.xxs-12 {
+  width: 60%;
+}
+.xxs-13 {
+  width: 65%;
+}
+.xxs-14 {
+  width: 70%;
+}
+.xxs-15 {
+  width: 75%;
+}
+.xxs-16 {
+  width: 80%;
+}
+.xxs-17 {
+  width: 85%;
+}
+.xxs-18 {
+  width: 90%;
+}
+.xxs-19 {
+  width: 95%;
+}
+.xxs-20 {
+  width: 100%;
 }
 @media screen and (min-width: 480px) {
   .xs-1 {
@@ -513,20 +523,59 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
+.blog {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+}
+.blog::before,
+.blog::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.blog section {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+}
+.blog section::before,
+.blog section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.blog section.half article {
+  float: left;
+  min-height: 1px;
+  background: #ccc;
+  margin-top: 2px;
+  width: 50%;
+  margin-left: 50%;
+}
+@media screen and (min-width: 1200px) {
+  .blog section.half article {
+    width: 75%;
+    margin-left: 25%;
+  }
+}
 .blog section article {
   float: left;
   min-height: 1px;
   background: #ccc;
   margin-top: 2px;
+  width: 100%;
+  min-height: 300px;
+  background: #247bad;
 }
 @media screen and (min-width: 480px) {
   .blog section article {
-    width: 100%;
+    width: 85%;
   }
 }
 @media screen and (min-width: 992px) {
   .blog section article {
-    width: 75%;
+    width: 70%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -539,15 +588,18 @@ textarea {
   min-height: 1px;
   background: #ccc;
   margin-top: 2px;
+  width: 100%;
+  min-height: 300px;
+  background: #ffc0cb;
 }
 @media screen and (min-width: 480px) {
   .blog section aside {
-    width: 100%;
+    width: 15%;
   }
 }
 @media screen and (min-width: 992px) {
   .blog section aside {
-    width: 25%;
+    width: 30%;
   }
 }
 @media screen and (min-width: 1200px) {

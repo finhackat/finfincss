@@ -3,11 +3,24 @@
 @require "modules/*"
 
 
-.blog 
+.blog
+  make-row()
+   
   section 
+    make-row()
+    
+    &.half
+      article 
+        make-column((xxs 10 10) (lg 15 5))      
+    
     article
-      $sizes = (xs 20) (md 15) (lg 12)
+      $sizes = (xxs 20) (xs 17) (md 14) (lg 12)
       make-column($sizes)
+      min-height 300px
+      background #247bad
+      
     aside
-      $sizes = (xs 20) (md 5) (lg 8)
+      $sizes = (xxs 20) (xs 3) (md 6) (lg 8)
       make-column($sizes)      
+      min-height 300px
+      background pink
