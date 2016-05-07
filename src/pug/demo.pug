@@ -8,9 +8,16 @@ html(lang="en").no-js
     link(rel="stylesheet", href="finfin.css", type="text/css")
   body
   
+    h1 Grid
     div.container
       - for (var x = 1; x <= 20; x++)
         div.row
           div(class="xs-"+x)= x
           if(20-x > 0)
             div(class="xs-"+(20-x))= 20-x
+            
+    h1 Blog
+    div.blog
+      section
+        article Artikel! 
+        aside Sidebar!

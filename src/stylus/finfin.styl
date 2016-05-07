@@ -1,3 +1,13 @@
 @require "variables"
 @require "modules/mixins/*"
 @require "modules/*"
+
+
+.blog 
+  section 
+    article
+      $sizes = (xs 20) (md 15) (lg 12)
+      make-column($sizes)
+    aside
+      $sizes = (xs 20) (md 5) (lg 8)
+      make-column($sizes)      

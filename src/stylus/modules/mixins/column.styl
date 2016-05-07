@@ -1,12 +1,30 @@
-make-columns(size)
+
+
+column($width = false) 
+  if $width
+    width ((100/$columns) * $width)%
+  else
+    float left
+    min-height 1px  
+    background #ccc
+    margin-top 2px
+  
+make-columns($size)
   $column_list = ()
   
-  for i in 1..$columns
-    $col-name = "." + size + "-" + i
+  for $i in 1..$columns
+    $col-name = "." + $size + "-" + $i
     $column_list = push($column_list,$col-name)
     
-    column(size,i)
-
-column(size,i)
-  .{size}-{i}
-    width ((100/$columns) * i)%
+    .{$size}-{$i}
+      column($i)
+    
+make-column($sizes)
+  column()
+  for $size in $sizes
+    if $size[0] != 'xxs'
+      @media screen and (min-width: $breakpoints[$size[0]])
+        column($size[1])
+    else
+      column($size[1])
+      

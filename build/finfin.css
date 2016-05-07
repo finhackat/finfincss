@@ -2,71 +2,73 @@
   margin: 0 auto;
   position: relative;
 }
-.row:before,
-.row:after {
+.row::before,
+.row::after {
   content: "";
   display: table;
   clear: both;
 }
-.xxs-1 {
-  width: 5%;
-}
-.xxs-2 {
-  width: 10%;
-}
-.xxs-3 {
-  width: 15%;
-}
-.xxs-4 {
-  width: 20%;
-}
-.xxs-5 {
-  width: 25%;
-}
-.xxs-6 {
-  width: 30%;
-}
-.xxs-7 {
-  width: 35%;
-}
-.xxs-8 {
-  width: 40%;
-}
-.xxs-9 {
-  width: 45%;
-}
-.xxs-10 {
-  width: 50%;
-}
-.xxs-11 {
-  width: 55%;
-}
-.xxs-12 {
-  width: 60%;
-}
-.xxs-13 {
-  width: 65%;
-}
-.xxs-14 {
-  width: 70%;
-}
-.xxs-15 {
-  width: 75%;
-}
-.xxs-16 {
-  width: 80%;
-}
-.xxs-17 {
-  width: 85%;
-}
-.xxs-18 {
-  width: 90%;
-}
-.xxs-19 {
-  width: 95%;
-}
-.xxs-20 {
-  width: 100%;
+@media screen and (min-width: 320px) {
+  .xxs-1 {
+    width: 5%;
+  }
+  .xxs-2 {
+    width: 10%;
+  }
+  .xxs-3 {
+    width: 15%;
+  }
+  .xxs-4 {
+    width: 20%;
+  }
+  .xxs-5 {
+    width: 25%;
+  }
+  .xxs-6 {
+    width: 30%;
+  }
+  .xxs-7 {
+    width: 35%;
+  }
+  .xxs-8 {
+    width: 40%;
+  }
+  .xxs-9 {
+    width: 45%;
+  }
+  .xxs-10 {
+    width: 50%;
+  }
+  .xxs-11 {
+    width: 55%;
+  }
+  .xxs-12 {
+    width: 60%;
+  }
+  .xxs-13 {
+    width: 65%;
+  }
+  .xxs-14 {
+    width: 70%;
+  }
+  .xxs-15 {
+    width: 75%;
+  }
+  .xxs-16 {
+    width: 80%;
+  }
+  .xxs-17 {
+    width: 85%;
+  }
+  .xxs-18 {
+    width: 90%;
+  }
+  .xxs-19 {
+    width: 95%;
+  }
+  .xxs-20 {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 480px) {
   .xs-1 {
@@ -510,4 +512,46 @@ textarea {
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
+}
+.blog section article {
+  float: left;
+  min-height: 1px;
+  background: #ccc;
+  margin-top: 2px;
+}
+@media screen and (min-width: 480px) {
+  .blog section article {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .blog section article {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .blog section article {
+    width: 60%;
+  }
+}
+.blog section aside {
+  float: left;
+  min-height: 1px;
+  background: #ccc;
+  margin-top: 2px;
+}
+@media screen and (min-width: 480px) {
+  .blog section aside {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .blog section aside {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .blog section aside {
+    width: 40%;
+  }
 }
