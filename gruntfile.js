@@ -73,9 +73,13 @@ module.exports = function(grunt) {
           pretty: true,
           data: {name: '<%= pkg.name %>', namespace: '<%= pkg.namespace %>', version: '<%= pkg.version %>'}
         },
-        files: {
-          'build/<%= pkg.namespace %>_demo.html': 'src/**/*.pug'
-        }
+        files: [{
+          expand: true,
+          cwd: 'src/pug/',
+          src: ['**/*.pug'],
+          dest: 'build/demo/',
+          ext: '.html'
+        }]
       }
     },
 
@@ -85,11 +89,17 @@ module.exports = function(grunt) {
     watch: {
       stylesheets: {
         files: 'src/**/*.styl',
-        tasks: ['stylesheets']
+        tasks: ['stylesheets'],
+        options: {
+          livereload: true,
+        },
       },
       pug: {
         files: 'src/**/*.pug',
-        tasks: ['pug']
+        tasks: ['pug'],
+        options: {
+          livereload: true,
+        },
       },
       copy: {
         files: ['src/**', '!src/**/*.styl', '!src/**/*.pug'],
