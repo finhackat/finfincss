@@ -156,9 +156,11 @@ module.exports = function(grunt) {
   /*
     Register default task.
   */
+  var default_tasks = grunt.option('target') == 'develop' ? ['build', 'connect', 'watch'] : ['build'];
+  
   grunt.registerTask(
     'default', 
     'Build, serve and watch. Woff.', 
-    ['build', 'connect', 'watch']
+    default_tasks
   );
 };
