@@ -1,13 +1,19 @@
-img 
-  display inline-block
-  max-width 100%
-  height auto
+header 
+  line-height $header-height
+  max-height $header-height
+  
+  h1 
+    margin 0
+    overflow hidden
+    img
+      max-height 100%
 
 ul 
-  &.inline 
+  &.inline, nav &
     list-style-type none
     margin 0
     padding 0
     
     li 
       display inline-block
+  
