@@ -886,6 +886,31 @@ textarea {
   min-height: 1px;
   padding: 0 15px;
 }
+@media screen and (min-width: 20em) and (max-width: 30em) {
+  .xxs-hide {
+    display: none;
+  }
+}
+@media screen and (min-width: 30em) and (max-width: 48em) {
+  .xs-hide {
+    display: none;
+  }
+}
+@media screen and (min-width: 48em) and (max-width: 62em) {
+  .sm-hide {
+    display: none;
+  }
+}
+@media screen and (min-width: 62em) and (max-width: 75em) {
+  .md-hide {
+    display: none;
+  }
+}
+@media screen and (min-width: 75em) and (max-width: 99em) {
+  .lg-hide {
+    display: none;
+  }
+}
 header {
   padding: 0 15px;
   max-height: 50px;
@@ -980,7 +1005,7 @@ a {
   width: 83.33333333333334%;
   margin-left: 83.33333333333334%;
 }
-@media screen and (min-width: 75em) {
+@media screen and (min-width: 75em 99em) {
   .blog section.half article {
     width: 125.00000000000001%;
     margin-left: 41.66666666666667%;
@@ -994,17 +1019,17 @@ a {
   min-height: 300px;
   background: #247bad;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 30em 48em) {
   .blog section article {
     width: 141.66666666666669%;
   }
 }
-@media screen and (min-width: 62em) {
+@media screen and (min-width: 62em 75em) {
   .blog section article {
     width: 116.66666666666667%;
   }
 }
-@media screen and (min-width: 75em) {
+@media screen and (min-width: 75em 99em) {
   .blog section article {
     width: 100%;
   }
@@ -1017,17 +1042,17 @@ a {
   min-height: 300px;
   background: #ffc0cb;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 30em 48em) {
   .blog section aside {
     width: 25%;
   }
 }
-@media screen and (min-width: 62em) {
+@media screen and (min-width: 62em 75em) {
   .blog section aside {
     width: 50%;
   }
 }
-@media screen and (min-width: 75em) {
+@media screen and (min-width: 75em 99em) {
   .blog section aside {
     width: 66.66666666666667%;
   }

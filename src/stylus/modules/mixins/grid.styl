@@ -1,12 +1,12 @@
 make-grid()
   $all-columns = ""
   
-  for $size, $min-width in $breakpoints
+  for $size, $width in $breakpoints
   
     $all-columns = $all-columns + ($all-columns ? ',' : '') + "[class*='" + $size + "-'] "
   
     if $size != 'xxs'
-      @media screen and (min-width: $min-width)
+      @media screen and (min-width: $width[0])
         make-columns($size)
     else
       make-columns($size)

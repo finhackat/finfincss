@@ -1,0 +1,5 @@
+make-hide()  
+  for $size, $width in $breakpoints
+    @media screen and (min-width: $width[0]) and (max-width: $width[1])
+      .{$size}-hide
+        display none
