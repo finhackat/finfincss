@@ -1,0 +1,30 @@
+header 
+  clearfix()
+  padding 0 $padding-base
+  max-height $header-height
+  
+  h1.brand
+    float left 
+    line-height $header-height
+    margin 0
+    overflow hidden
+    img
+      max-height 100%
+
+  nav > ul
+    float left
+
+ul 
+  &.inline, header nav &, footer nav &, menu & 
+    list-style-type none
+    margin 0
+    padding 0
+    
+    li 
+      display inline-block
+      line-height $font-base
+      padding (($header-height - $font-base) / 2)px $padding-base
+      
+      &:last-child 
+        padding-right 0
+  

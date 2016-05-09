@@ -3,10 +3,12 @@ column($width = false,$push = 0)
     width ((100/$columns) * $width)%
     if $push > 0
       make-push($push)
+    if $push < 0
+      make-pull($push)
   else
     float left
     min-height 1px  
-    background #ccc
+    padding 0 $padding-base
   
 make-columns($size)
   $column_list = ()
@@ -17,6 +19,10 @@ make-columns($size)
     
     .{$size}-{$i}
       column($i)
+    .{$size}-push-{$i}
+      make-push($i)
+    .{$size}-pull-{$i}
+      make-pull($i)
     
 make-column($sizes)
   column()
@@ -30,3 +36,6 @@ make-column($sizes)
       
 make-push($width)
   margin-left ((100/$columns) * $width)%
+
+make-pull($width)
+  margin-right ((100/$columns) * $width)%
